@@ -2,7 +2,7 @@
 ; Place this file next to agent.cmd on your USB stick. Keep your key secret!
 [api]
 endpoint = https://api.anthropic.com
-model = claude-3-sonnet-20240229
+model = <current-supported-model>
 key = PASTE_YOUR_KEY_HERE
 ; Cloudflare on freemodel cuts some User-Agents - pick a working one:
 useragent = claude-cli/1.0 (external, cli)
