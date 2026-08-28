@@ -1,0 +1,27 @@
+; ===== NewEra Revive config =====
+; Place this file next to agent.cmd on your USB stick. Keep your key secret!
+[api]
+endpoint = https://api.anthropic.com
+model = claude-3-sonnet-20240229
+key = PASTE_YOUR_KEY_HERE
+; Cloudflare on freemodel cuts some User-Agents - pick a working one:
+useragent = claude-cli/1.0 (external, cli)
+; How many times to retry request on SSL-break / 500 (proxy overloaded):
+retries = 10
+; Base pause; real pause grows exponentially: delay * 2^(attempt-1) + jitter, up to 60 sec
+retry_delay_sec = 3
+; max_steps = 0  => no limit, agent works until it fixes and stops itself
+max_steps = 0
+; auto = 1 => full autonomous mode, executes all commands WITHOUT confirmation
+;        0 => asks y/n for commands with confirm verdict
+; This is DEFAULT: at start agent will ask mode (A/M) and you can override.
+auto = 1
+; block_destructive = 1 => hard safety net: format/clean/del /s/cipher /w,
+;   also any write to X: (WinRE itself) - always blocked
+;                     0 => UNSAFE: nothing blocked, full control (DANGEROUS)
+; This is DEFAULT: at start agent will ask safety level (S/U) and you can override.
+block_destructive = 1
+; ui = tui  => colored interface (ANSI: green/yellow/red verdicts, blue
+;              model thoughts, step header). Works in Win10-conhost (WinRE).
+;      plain => no color, old clean output (if console doesn't understand ANSI).
+ui = tui

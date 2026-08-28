@@ -1,0 +1,1 @@
+  [Enter]       - оставить значение из конфига (block_destructive=
