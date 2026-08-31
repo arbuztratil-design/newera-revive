@@ -136,7 +136,7 @@ if not defined CURLBIN (
     goto :done
 )
 set "HTTP=000"
-for /f %%H in ('"%CURLBIN%" -s -o nul -w "%%{http_code}" --connect-timeout 15 https://cc.freemodel.dev/v1/models 2^>nul') do set "HTTP=%%H"
+for /f %%H in ('"%CURLBIN%" -s -o nul -w "%%{http_code}" --connect-timeout 15 api.anthropic.com 2^>nul') do set "HTTP=%%H"
 if "!HTTP!"=="000" (
     echo     HTTPS: FAILED - check clock/date: "date" and "time" commands.
     echo     TLS breaks if CMOS clock is wrong.
