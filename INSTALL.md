@@ -56,7 +56,7 @@ newera-revive/
 4. Verify other settings:
    ```ini
    endpoint = https://api.anthropic.com
-   model = claude-3-sonnet-20240229
+   model = <current-supported-model>
    auto = 1              ; Change to 0 for manual mode
    block_destructive = 1 ; Keep as 1 for safety
    ui = tui              ; Change to plain if colors don't work
